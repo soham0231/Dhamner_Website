@@ -6,6 +6,8 @@ import Photos from "./Photos";
 import Services from "./Services";
 import News from "./News";
 import Review from "./Review";
+import Progress from "./Progress";
+import Awards from "./Awards";
 export default function HomePage() {
     return (
         <>
@@ -14,7 +16,9 @@ export default function HomePage() {
             <AboutUs/>
             <Population/>
             <Photos/>
+            <Progress/>
             <Services/>
+            <Awards/>
             <News/>
             <Review/>
         </>

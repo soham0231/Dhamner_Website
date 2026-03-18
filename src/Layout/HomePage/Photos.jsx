@@ -1,10 +1,15 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 export default function Photos() {  
       const images = [
-    "/images/img1.jpg",
-    "/images/img2.jpg",
-    "/images/img3.jpg",
-    "/images/img4.jpg",
+    "/gallery/openGYM/WhatsApp Image 2026-03-17 at 6.23.53 PM.jpeg",
+    "/gallery/tapasani/WhatsApp .jpeg",
+    "/gallery/Road/गावातील सिमेंट रस्ते.jpg.jpeg",
+    "/gallery/plasticBandi/WhatsApp Image 2026-03-18 at 12.13.47 AM.jpeg",
+    "/gallery/nananani/WhatsApp Image 2026-03-17 at 6.23.50 PM.jpeg",
+    "/gallery/gramPanchayat/IMG-20250421-WA0034.jpg.jpeg",
+    "/gallery/gramSwachta/WhatsApp Image 2026-03-18 at 10.56.21 AM.jpeg",
+    "/gallery/GramSabha/1758122657814.jpg.jpeg",
   ];
     return (
         <section className="bg-[#8b6400] py-16 px-6">
@@ -30,12 +35,16 @@ export default function Photos() {
 
         {/* Button */}
         <div className="flex justify-center mt-12">
+
+         <Link to="/gallery">
           <button className="flex items-center gap-3 bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold transition">
             अधिक पहा
             <span className="bg-white text-red-500 p-2 rounded-full">
               <ArrowRight size={20} />
             </span>
           </button>
+          </Link>
+          
         </div>
 
       </div>

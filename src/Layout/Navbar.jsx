@@ -15,7 +15,6 @@ export default function Navbar() {
       dropdown: [
         { name: "आमच्याबद्दल", link: "/about" },
         { name: "अधिकारी/पदाधिकारी", link: "/officers" },
-        { name: "कार्यकारी मंडळ व समित्या", link: "/committee" },
         { name: "फोटो गॅलरी", link: "/gallery" },
       ],
     },

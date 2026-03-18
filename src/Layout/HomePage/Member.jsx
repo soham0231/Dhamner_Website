@@ -4,19 +4,19 @@ export default function Member(){
       id: 1,
       name: "श्री.चंद्रकांत शंकर व्होवाळे",
       role: "सरपंच",
-      image: "/sarpanch.jpg",
+      image: "/members/Sarpanch chandrakant howale.jpg.jpeg",
     },
     {
       id: 2,
       name: "श्री.प्रविण वामन क्षीरसागर",
       role: "उपसरपंच",
-      image: "/upsarpanch.jpg",
+      image: "/members/upsarpanch pravin kshirsagar.jpg.jpeg",
     },
     {
       id: 3,
-      name: "अनिल श्रीकांत हिरासकर",
-      role: "आदर्श सरपंच",
-      image: "/officer.jpg",
+      name: "श्री.प्रशांत फडतरे",
+      role: "ग्रामपंचायत अधिकारी ",
+      image: "/members/WhatsApp Image 2026-03-17 at 6.13.49 PM.jpeg",
     },
   ];
     return(

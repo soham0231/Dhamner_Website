@@ -35,6 +35,13 @@ import PropertyCard from "./Layout/Documents/PropertyCard.jsx";
 import PropertyTransfer from "./Layout/Documents/PropertyTransfer.jsx";
 import DocumentsSection from "./Layout/Documents/DocumentsPage.jsx";
 import GovernmentSchemes from "./Layout/Government Services/GovernmentSchemes.jsx";
+import Krushi from './Layout/Division/agriculture.jsx';
+import PashuSanvardhan from "./Layout/Division/animal.jsx";
+import Contact from "./Layout/Contact/contact.jsx";
+import Map from "./Layout/Map/map.jsx";
+import Health from "./Layout/Division/health.jsx";
+import Yashogatha from "./Yashogatha/yashogatha.jsx";
+
 import { Routes, Route } from "react-router-dom";
 
 
@@ -80,6 +87,13 @@ function App() {
       <Route path='/transfer' element={<PropertyTransfer/>}/>
       <Route path='/documents' element={<DocumentsSection/>}/>
       <Route path='/schemes' element={<GovernmentSchemes/>}/>
+      <Route path='/agriculture' element={<Krushi />} />
+      <Route path='/animal' element={<PashuSanvardhan />} />
+      <Route path='/help' element={<Contact />} />
+      <Route path='/map' element={<Map />} />
+      <Route path='/health' element={<Health />} />
+      <Route path='/yashogatha' element={<Yashogatha />} />
+
       </Routes>
 
       <Footer />

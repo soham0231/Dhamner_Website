@@ -47,7 +47,7 @@ export default function BuildingPermission() {
     });
 
     try {
-      await axios.post("http://localhost:5000/api/building-permission", data);
+      await axios.post("https://dhamner-website.onrender.com/api/building-permission", data);
       alert("Form submitted successfully!");
     } catch (err) {
       console.error(err);

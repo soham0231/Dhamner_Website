@@ -61,7 +61,7 @@ export default function BusinessLicense() {
     if (files.payment) data.append("payment", files.payment);
 
     try {
-      await axios.post("http://localhost:5000/api/business-form", data);
+      await axios.post("https://dhamner-website.onrender.com/api/business-form", data);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

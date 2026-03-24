@@ -43,7 +43,7 @@ export default function MalmattaDocument() {
     data.append("screenshot", file);
 
     try {
-      await axios.post("http://localhost:5000/api/malmatta-form", data);
+      await axios.post("https://dhamner-website.onrender.com/api/malmatta-form", data);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

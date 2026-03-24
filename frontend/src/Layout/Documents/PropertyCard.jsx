@@ -42,7 +42,7 @@ export default function PropertyCard() {
     data.append("screenshot", file);
 
     try {
-      await axios.post("http://localhost:5000/api/property-card", data);
+      await axios.post("https://dhamner-website.onrender.com/api/property-card", data);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

@@ -43,7 +43,7 @@ export default function MarriageDocument() {
     data.append("screenshot", file);
 
     try {
-      await axios.post("http://localhost:5000/api/marriage-form", data);
+      await axios.post("https://dhamner-website.onrender.com/api/marriage-form", data);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

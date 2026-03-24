@@ -42,7 +42,7 @@ export default function ResidenceDocument() {
     data.append("screenshot", file);
 
     try {
-      await axios.post("http://localhost:5000/api/residence-form", data);
+      await axios.post("https://dhamner-website.onrender.com/api/residence-form", data);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

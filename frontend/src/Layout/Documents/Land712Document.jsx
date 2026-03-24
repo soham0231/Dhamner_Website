@@ -41,7 +41,7 @@ export default function Land712Document() {
     data.append("screenshot", file);
 
     try {
-      await axios.post("http://localhost:5000/api/land712", data);
+      await axios.post("https://dhamner-website.onrender.com/api/land712", data);
       alert("Form submitted successfully!");
       // Reset form
       setFormData({

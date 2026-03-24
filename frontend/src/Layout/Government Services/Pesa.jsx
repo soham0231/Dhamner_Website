@@ -8,7 +8,7 @@ export default function PesaScheme() {
       <section className="bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 text-white px-6 md:px-20 flex flex-col md:flex-row items-center justify-between min-h-[60vh] py-20 md:py-32 gap-10">
 
         <h1 className="text-4xl md:text-7xl text-center md:text-left">
-          पैसा 5% अबंध  निधी योजना
+          पेसा 5% अबंध  निधी योजना
         </h1>
 
         <img

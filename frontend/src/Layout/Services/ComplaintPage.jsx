@@ -23,7 +23,7 @@ export default function ComplaintPage() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/complaints", formData);
+      await axios.post("https://dhamner-website.onrender.com/api/complaints", formData);
       alert("तक्रार यशस्वीरित्या पाठवली ✅");
       setFormData({
         propertyId: "",

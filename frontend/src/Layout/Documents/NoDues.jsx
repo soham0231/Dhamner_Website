@@ -24,7 +24,7 @@ export default function NoDues() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/no-dues", formData);
+      await axios.post("https://dhamner-website.onrender.com/api/no-dues", formData);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

@@ -43,7 +43,7 @@ export default function BirthDocument() {
     data.append("screenshot", file);
 
     try {
-      await axios.post("http://localhost:5000/api/form", data);
+      await axios.post("https://dhamner-website.onrender.com/api/form", data);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

@@ -22,7 +22,7 @@ export default function AgeDocument() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/age-certificate", formData);
+      await axios.post("https://dhamner-website.onrender.com/api/age-certificate", formData);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

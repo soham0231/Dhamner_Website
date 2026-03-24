@@ -42,7 +42,7 @@ export default function PropertyTransfer() {
     });
 
     try {
-      await axios.post("http://localhost:5000/api/property-transfer", data);
+      await axios.post("https://dhamner-website.onrender.com/api/property-transfer", data);
       alert("Form submitted successfully!");
     } catch (err) {
       console.error(err);

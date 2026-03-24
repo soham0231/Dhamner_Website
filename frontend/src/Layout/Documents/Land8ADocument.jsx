@@ -41,7 +41,7 @@ export default function Land8ADocument() {
     data.append("screenshot", file);
 
     try {
-      await axios.post("http://localhost:5000/api/land8a", data);
+      await axios.post("https://dhamner-website.onrender.com/api/land8a", data);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

@@ -21,7 +21,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/contact", formData);
+      await axios.post("https://dhamner-website.onrender.com/api/contact", formData);
       alert("संपर्क संदेश पाठवला गेला ✅");
       setFormData({
         firstName: "",

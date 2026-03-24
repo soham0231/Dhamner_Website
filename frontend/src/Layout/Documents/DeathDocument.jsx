@@ -43,7 +43,7 @@ export default function DeathForm() {
     data.append("screenshot", file);
 
     try {
-      await axios.post("http://localhost:5000/api/death-form", data);
+      await axios.post("https://dhamner-website.onrender.com/api/death-form", data);
       alert("Form submitted successfully ✅");
       // Reset form
       setFormData({

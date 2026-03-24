@@ -21,7 +21,7 @@ export default function Review() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/review", formData);
+      await axios.post("https://dhamner-website.onrender.com/api/review", formData);
       alert("आपली मते पाठवली गेली ✅");
       setFormData({
         firstName: "",

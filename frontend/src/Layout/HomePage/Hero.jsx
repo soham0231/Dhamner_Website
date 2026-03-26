@@ -21,7 +21,7 @@ export default function Hero() {
           {/* Left Content */}
           <div className="text-white text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              ग्रामपंचायत धामणेर
+             यशवंत ग्रामपंचायत धामणेर
             </h1>
 
             <h2 className="text-green-500 text-xl sm:text-2xl md:text-3xl mt-3 font-semibold">

@@ -16,6 +16,7 @@ export default function Navbar() {
         { name: "आमच्याबद्दल", link: "/about" },
         { name: "अधिकारी/पदाधिकारी", link: "/officers" },
         { name: "फोटो गॅलरी", link: "/gallery" },
+        { name: "धामणेरची यशोगाथा ", link: "/yashogatha" },
       ],
     },
 
@@ -88,7 +89,7 @@ export default function Navbar() {
     },
 
     { name: "नकाशा", link: "/map" },
-    { name: "धामणेरची यशोगाथा ", link: "/yashogatha" },
+    { name: " माहितीचा अधिकार  ", link: "/information" },
     { name: "संपर्क ", link: "/help" },
   ];
 

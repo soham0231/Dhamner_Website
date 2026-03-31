@@ -41,7 +41,7 @@ import PashuSanvardhan from "./Layout/Division/animal.jsx";
 import Contact from "./Layout/Contact/contact.jsx";
 import Map from "./Layout/Map/map.jsx";
 import Health from "./Layout/Division/health.jsx";
-import Yashogatha from "./Yashogatha/yashogatha.jsx";
+import Yashogatha from "./Layout/mahitichaAdhikar/information.jsx";
 
 import { Routes, Route } from "react-router-dom";
 

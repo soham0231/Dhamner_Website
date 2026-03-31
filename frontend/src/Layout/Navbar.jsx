@@ -88,7 +88,7 @@ export default function Navbar() {
     },
 
     { name: "नकाशा", link: "/map" },
-    { name: "धामणेरची यशोगाथा ", link: "/yashogatha" },
+    { name: " माहितीचा अधिकार  ", link: "/yashogatha" },
     { name: "संपर्क ", link: "/help" },
   ];
 

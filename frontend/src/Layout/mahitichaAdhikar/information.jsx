@@ -8,21 +8,21 @@ import "react-pdf/dist/Page/TextLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = worker;
 
 const Information = () => {
-  const [numPages, setNumPages] = useState(null);
+  const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 
   const [pdfWidth, setPdfWidth] = useState(600);
   const [imgScale, setImgScale] = useState(1);
 
-  // 🔥 Responsive width handler
+  // ✅ Responsive width
   useEffect(() => {
     const updateWidth = () => {
       if (window.innerWidth < 640) {
-        setPdfWidth(280);
+        setPdfWidth(window.innerWidth - 40);
       } else if (window.innerWidth < 1024) {
-        setPdfWidth(450);
+        setPdfWidth(500);
       } else {
-        setPdfWidth(650);
+        setPdfWidth(700);
       }
     };
 
@@ -31,8 +31,17 @@ const Information = () => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
+  // ✅ Safe navigation
+  const goPrev = () => {
+    setPageNumber((prev) => Math.max(prev - 1, 1));
+  };
+
+  const goNext = () => {
+    setPageNumber((prev) => Math.min(prev + 1, numPages));
+  };
+
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center py-6 px-3 sm:px-4">
+    <div className="w-full min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center py-6 px-3">
 
       {/* 🔷 TITLE */}
       <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6 text-green-700 text-center">
@@ -40,16 +49,7 @@ const Information = () => {
       </h1>
 
       {/* 🔷 PDF VIEWER */}
-      <div className="relative w-full flex justify-center">
-
-        {/* ⬅ LEFT */}
-        <button
-          onClick={() => setPageNumber(pageNumber - 1)}
-          disabled={pageNumber <= 1}
-          className="absolute left-1 sm:left-[-40px] top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 text-lg sm:text-xl"
-        >
-          ❮
-        </button>
+      <div className="w-full flex flex-col items-center">
 
         {/* PDF */}
         <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4">
@@ -61,23 +61,30 @@ const Information = () => {
           </Document>
         </div>
 
-        {/* ➡ RIGHT */}
-        <button
-          onClick={() => setPageNumber(pageNumber + 1)}
-          disabled={pageNumber >= numPages}
-          className="absolute right-1 sm:right-[-40px] top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 text-lg sm:text-xl"
-        >
-          ❯
-        </button>
-      </div>
+        {/* ✅ BUTTONS BELOW (BEST FOR MOBILE) */}
+        <div className="flex items-center justify-center gap-6 mt-4">
 
-      {/* 🔷 CONTROLS */}
-      <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
+          <button
+            onClick={goPrev}
+            disabled={pageNumber <= 1}
+            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
+          >
+            ⬅ Prev
+          </button>
 
-        <div className="px-3 sm:px-4 py-2 bg-white rounded-lg shadow text-xs sm:text-sm font-semibold">
-          Page {pageNumber} of {numPages}
+          <div className="px-4 py-2 bg-white rounded-lg shadow font-semibold text-sm">
+            Page {pageNumber} / {numPages || "--"}
+          </div>
+
+          <button
+            onClick={goNext}
+            disabled={pageNumber >= numPages}
+            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
+          >
+            Next ➡
+          </button>
+
         </div>
-
       </div>
 
       {/* ================= IMAGE ================= */}
@@ -88,19 +95,16 @@ const Information = () => {
 
       {/* IMAGE */}
       <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4 flex justify-center overflow-hidden">
-
         <img
           src="/Pdfs/१५ वा वित्त आयोग जमा खर्च.jpg.jpeg"
           alt="Finance"
           style={{ transform: `scale(${imgScale})` }}
-          className="transition-transform duration-300 w-full max-w-[280px] sm:max-w-[450px] md:max-w-[650px] h-auto"
+          className="transition-transform duration-300 w-full max-w-[280px] sm:max-w-[450px] md:max-w-[650px]"
         />
-
       </div>
 
       {/* IMAGE CONTROLS */}
       <div className="flex items-center gap-4 mt-4">
-
         <button
           onClick={() => setImgScale((prev) => Math.max(prev - 0.2, 0.6))}
           className="px-3 py-1 bg-gray-600 text-white rounded"
@@ -114,9 +118,7 @@ const Information = () => {
         >
           +
         </button>
-
       </div>
-
     </div>
   );
 };

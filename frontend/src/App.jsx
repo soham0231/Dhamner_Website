@@ -41,7 +41,8 @@ import PashuSanvardhan from "./Layout/Division/animal.jsx";
 import Contact from "./Layout/Contact/contact.jsx";
 import Map from "./Layout/Map/map.jsx";
 import Health from "./Layout/Division/health.jsx";
-import Yashogatha from "./Layout/mahitichaAdhikar/information.jsx";
+import Yashogatha from "./Layout/Ourself/yashogatha.jsx";
+import MahitichaAdhikar from "./Layout/mahitichaAdhikar/information.jsx";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -98,6 +99,7 @@ function App() {
         <Route path='/map' element={<Map />} />
         <Route path='/health' element={<Health />} />
         <Route path='/yashogatha' element={<Yashogatha />} />
+        <Route path='/information' element={<MahitichaAdhikar />} />
       </Routes>
 
       <Footer />

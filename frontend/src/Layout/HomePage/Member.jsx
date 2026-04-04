@@ -40,6 +40,24 @@ export default function Member() {
     },
      {
       id: 7,
+      name: "एल जी गावडे साहेब  ",
+      role: "सहाय्यक गटविकास अधिकारी कोरेगाव",
+      image: "/members/WhatsApp Image 2026-04-03 at 4.23.53 PM.jpeg",
+    },
+     {
+      id: 8,
+      name: "सुप्रिया चव्हाण मॅडम  ",
+      role: "गटविकास अधिकारी पंचायत समिती कोरेगाव",
+      image: "/members/WhatsApp Image 2026-04-03 at 4.25.57 PM.jpeg",
+    },
+     {
+      id: 9,
+      name: "राहुल देशमुख साहेब ",
+      role: "उपमुख्य कार्यकारी अधिकारी(ग्रामपंचायत)जिल्हा परिषद सातारा",
+      image: "/members/WhatsApp Image 2026-04-03 at 4.33.10 PM.jpeg",
+    },
+     {
+      id: 10,
       name: "शहाजी क्षीरसागर ",
       role: "आदर्श सरपंच ",
       image: "/members/शहाजी क्षीरसागर.png",

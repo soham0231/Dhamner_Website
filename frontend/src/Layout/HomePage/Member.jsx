@@ -38,24 +38,30 @@ export default function Member() {
       role: "मुख्य कार्यकारी अधिकारी CEO",
       image: "/members/ceo.png",
     },
-     {
-      id: 7,
-      name: "एल जी गावडे साहेब  ",
-      role: "सहाय्यक गटविकास अधिकारी कोरेगाव",
-      image: "/members/WhatsApp Image 2026-04-03 at 4.23.53 PM.jpeg",
+    {
+      id: 7 ,
+      name: "राहुल देसाई साहेब ",
+      role: "उपमुख्य कार्यकारी अधिकारी(ग्रामपंचायत)जिल्हा परिषद सातारा",
+      image: "/members/WhatsApp Image 2026-04-03 at 4.33.10 PM.jpeg",
     },
-     {
+    {
       id: 8,
       name: "सुप्रिया चव्हाण मॅडम  ",
       role: "गटविकास अधिकारी पंचायत समिती कोरेगाव",
       image: "/members/WhatsApp Image 2026-04-03 at 4.25.57 PM.jpeg",
     },
      {
-      id: 9,
-      name: "राहुल देशमुख साहेब ",
-      role: "उपमुख्य कार्यकारी अधिकारी(ग्रामपंचायत)जिल्हा परिषद सातारा",
-      image: "/members/WhatsApp Image 2026-04-03 at 4.33.10 PM.jpeg",
-    },
+      id: 9 ,
+      name: "एल जी गावडे साहेब  ",
+      role: "सहाय्यक गटविकास अधिकारी कोरेगाव",
+      image: "/members/WhatsApp Image 2026-04-03 at 4.23.53 PM.jpeg",
+    }, 
+    {
+      id: 9 ,
+      name: "एन बी माने",
+      role: "विस्ताराधिकारी ग्रामपंचायत पंचायत समिती कोरेगाव ",
+      image: "/members/WhatsApp Image 2026-04-04 at 5.15.33 PM.jpeg",
+    }, 
      {
       id: 10,
       name: "शहाजी क्षीरसागर ",

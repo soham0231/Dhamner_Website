@@ -8,8 +8,14 @@ import "react-pdf/dist/Page/TextLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = worker;
 
 const Information = () => {
-  const [numPages, setNumPages] = useState(0);
-  const [pageNumber, setPageNumber] = useState(1);
+
+  // 🔷 PDF 1 (dhamner.pdf)
+  const [numPages1, setNumPages1] = useState(0);
+  const [pageNumber1, setPageNumber1] = useState(1);
+
+  // 🔷 PDF 2 (जमा खर्च)
+  const [numPages2, setNumPages2] = useState(0);
+  const [pageNumber2, setPageNumber2] = useState(1);
 
   const [pdfWidth, setPdfWidth] = useState(600);
   const [imgScale, setImgScale] = useState(1);
@@ -31,69 +37,100 @@ const Information = () => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  // ✅ Safe navigation
-  const goPrev = () => {
-    setPageNumber((prev) => Math.max(prev - 1, 1));
-  };
+  // 🔷 PDF 1 controls
+  const goPrev1 = () => setPageNumber1((p) => Math.max(p - 1, 1));
+  const goNext1 = () => setPageNumber1((p) => Math.min(p + 1, numPages1));
 
-  const goNext = () => {
-    setPageNumber((prev) => Math.min(prev + 1, numPages));
-  };
+  // 🔷 PDF 2 controls
+  const goPrev2 = () => setPageNumber2((p) => Math.max(p - 1, 1));
+  const goNext2 = () => setPageNumber2((p) => Math.min(p + 1, numPages2));
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center py-6 px-3">
 
-      {/* 🔷 TITLE */}
+      {/* 🔷 PDF 1 TITLE */}
       <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6 text-green-700 text-center">
-        जमा खर्च सन २०२४/२५
+        ग्रामपंचायत माहिती २०२५
       </h1>
 
-      {/* 🔷 PDF VIEWER */}
+      {/* 🔷 PDF 1 */}
       <div className="w-full flex flex-col items-center">
-
-        {/* PDF */}
         <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4">
           <Document
-            file="/Pdfs/सन २०२४ २५ जमा खर्च.pdf"
-            onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+            file="/Pdfs/dhamner.pdf"
+            onLoadSuccess={({ numPages }) => setNumPages1(numPages)}
           >
-            <Page pageNumber={pageNumber} width={pdfWidth} />
+            <Page pageNumber={pageNumber1} width={pdfWidth} />
           </Document>
         </div>
 
-        {/* ✅ BUTTONS BELOW (BEST FOR MOBILE) */}
         <div className="flex items-center justify-center gap-6 mt-4">
-
           <button
-            onClick={goPrev}
-            disabled={pageNumber <= 1}
+            onClick={goPrev1}
+            disabled={pageNumber1 <= 1}
             className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
           >
             ⬅ Prev
           </button>
 
           <div className="px-4 py-2 bg-white rounded-lg shadow font-semibold text-sm">
-            Page {pageNumber} / {numPages || "--"}
+            Page {pageNumber1} / {numPages1 || "--"}
           </div>
 
           <button
-            onClick={goNext}
-            disabled={pageNumber >= numPages}
+            onClick={goNext1}
+            disabled={pageNumber1 >= numPages1}
             className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
           >
             Next ➡
           </button>
-
         </div>
       </div>
 
-      {/* ================= IMAGE ================= */}
+      {/* 🔷 PDF 2 TITLE */}
+      <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6 text-green-700 text-center mt-10">
+        जमा खर्च सन २०२४/२५
+      </h1>
 
+      {/* 🔷 PDF 2 */}
+      <div className="w-full flex flex-col items-center">
+        <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4">
+          <Document
+            file="/Pdfs/सन २०२४ २५ जमा खर्च.pdf"
+            onLoadSuccess={({ numPages }) => setNumPages2(numPages)}
+          >
+            <Page pageNumber={pageNumber2} width={pdfWidth} />
+          </Document>
+        </div>
+
+        <div className="flex items-center justify-center gap-6 mt-4">
+          <button
+            onClick={goPrev2}
+            disabled={pageNumber2 <= 1}
+            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
+          >
+            ⬅ Prev
+          </button>
+
+          <div className="px-4 py-2 bg-white rounded-lg shadow font-semibold text-sm">
+            Page {pageNumber2} / {numPages2 || "--"}
+          </div>
+
+          <button
+            onClick={goNext2}
+            disabled={pageNumber2 >= numPages2}
+            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
+          >
+            Next ➡
+          </button>
+        </div>
+      </div>
+
+      {/* 🔷 IMAGE */}
       <h2 className="text-lg sm:text-2xl font-bold mt-10 mb-4 text-green-700 text-center">
         १५ वित्त आयोग जमा खर्च
       </h2>
 
-      {/* IMAGE */}
       <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4 flex justify-center overflow-hidden">
         <img
           src="/Pdfs/१५ वा वित्त आयोग जमा खर्च.jpg.jpeg"

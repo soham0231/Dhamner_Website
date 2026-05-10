@@ -54,9 +54,13 @@ const galleryData = {
     "/gallery/gramSwachta/WhatsApp Image 2026-03-18 at 11.06.57 AM.jpeg",
   ],
   रस्त्याचीकामे: [
+     "/gallery/Road/WhatsApp Image 2026-05-10 at 10.31.55 PM (1).jpeg",
+    "/gallery/Road/WhatsApp Image 2026-05-10 at 10.31.55 PM (2).jpeg",
+    "/gallery/Road/WhatsApp Image 2026-05-10 at 10.31.55 PM.jpeg",
     "/gallery/Road/गावातील सिमेंट रस्ते.jpg.jpeg",
     "/gallery/Road/गावातील्र रस्ते 1.jpg.jpeg",
     "/gallery/Road/रस्ते.jpg.jpeg",
+
   ],
   ओपेनजिम: [
     "/gallery/openGYM/WhatsApp Image 2026-03-17 at 6.23.48 PM.jpeg",

@@ -57,44 +57,6 @@ const Information = () => {
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center py-6 px-3">
 
-      {/* 🔷 PDF 1 TITLE */}
-      <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6 text-green-700 text-center">
-        ग्रामपंचायत माहिती २०२५
-      </h1>
-
-      {/* 🔷 PDF 1 */}
-      <div className="w-full flex flex-col items-center">
-        <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4">
-          <Document
-            file="/Pdfs/dhamner.pdf"
-            onLoadSuccess={({ numPages }) => setNumPages1(numPages)}
-          >
-            <Page pageNumber={pageNumber1} width={pdfWidth} />
-          </Document>
-        </div>
-
-        <div className="flex items-center justify-center gap-6 mt-4">
-          <button
-            onClick={goPrev1}
-            disabled={pageNumber1 <= 1}
-            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
-          >
-            ⬅ Prev
-          </button>
-
-          <div className="px-4 py-2 bg-white rounded-lg shadow font-semibold text-sm">
-            Page {pageNumber1} / {numPages1 || "--"}
-          </div>
-
-          <button
-            onClick={goNext1}
-            disabled={pageNumber1 >= numPages1}
-            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
-          >
-            Next ➡
-          </button>
-        </div>
-      </div>
 
       {/* 🔷 PDF 2 TITLE */}
       <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6 text-green-700 text-center mt-10">

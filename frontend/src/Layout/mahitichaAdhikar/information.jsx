@@ -17,9 +17,13 @@ const Information = () => {
   const [numPages2, setNumPages2] = useState(0);
   const [pageNumber2, setPageNumber2] = useState(1);
 
-  // 🔷 PDF 3 (NEW PDF)
+  // 🔷 PDF 3
   const [numPages3, setNumPages3] = useState(0);
   const [pageNumber3, setPageNumber3] = useState(1);
+
+  // 🔷 PDF 4
+  const [numPages4, setNumPages4] = useState(0);
+  const [pageNumber4, setPageNumber4] = useState(1);
 
   const [pdfWidth, setPdfWidth] = useState(600);
   const [imgScale, setImgScale] = useState(1);
@@ -54,10 +58,14 @@ const Information = () => {
   const goPrev3 = () => setPageNumber3((p) => Math.max(p - 1, 1));
   const goNext3 = () => setPageNumber3((p) => Math.min(p + 1, numPages3));
 
+  // 🔷 PDF 4 controls
+  const goPrev4 = () => setPageNumber4((p) => Math.max(p - 1, 1));
+  const goNext4 = () => setPageNumber4((p) => Math.min(p + 1, numPages4));
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center py-6 px-3">
 
-        {/* 🔷 PDF 1 TITLE */}
+      {/* 🔷 PDF 1 TITLE */}
       <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6 text-green-700 text-center mt-10">
         RTI4(1) ख 1ते 17मुद्दे माहिती
       </h1>
@@ -67,28 +75,28 @@ const Information = () => {
         <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4">
           <Document
             file="/Pdfs/Pg माहितीचा अधिकार1 ते 17.pdf"
-            onLoadSuccess={({ numPages }) => setNumPages2(numPages)}
+            onLoadSuccess={({ numPages }) => setNumPages1(numPages)}
           >
-            <Page pageNumber={pageNumber2} width={pdfWidth} />
+            <Page pageNumber={pageNumber1} width={pdfWidth} />
           </Document>
         </div>
 
         <div className="flex items-center justify-center gap-6 mt-4">
           <button
-            onClick={goPrev2}
-            disabled={pageNumber2 <= 1}
+            onClick={goPrev1}
+            disabled={pageNumber1 <= 1}
             className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
           >
             ⬅ Prev
           </button>
 
           <div className="px-4 py-2 bg-white rounded-lg shadow font-semibold text-sm">
-            Page {pageNumber2} / {numPages2 || "--"}
+            Page {pageNumber1} / {numPages1 || "--"}
           </div>
 
           <button
-            onClick={goNext2}
-            disabled={pageNumber2 >= numPages2}
+            onClick={goNext1}
+            disabled={pageNumber1 >= numPages1}
             className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
           >
             Next ➡
@@ -96,10 +104,9 @@ const Information = () => {
         </div>
       </div>
 
-
       {/* 🔷 PDF 2 TITLE */}
       <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6 text-green-700 text-center mt-10">
-        जमा खर्च सन २०२५ /२६ 
+        जमा खर्च सन २०२५ /२६
       </h1>
 
       {/* 🔷 PDF 2 */}
@@ -146,45 +153,6 @@ const Information = () => {
         <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4">
           <Document
             file="/Pdfs/सन २०२४ २५ जमा खर्च.pdf"
-            onLoadSuccess={({ numPages }) => setNumPages2(numPages)}
-          >
-            <Page pageNumber={pageNumber2} width={pdfWidth} />
-          </Document>
-        </div>
-
-        <div className="flex items-center justify-center gap-6 mt-4">
-          <button
-            onClick={goPrev2}
-            disabled={pageNumber2 <= 1}
-            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
-          >
-            ⬅ Prev
-          </button>
-
-          <div className="px-4 py-2 bg-white rounded-lg shadow font-semibold text-sm">
-            Page {pageNumber2} / {numPages2 || "--"}
-          </div>
-
-          <button
-            onClick={goNext2}
-            disabled={pageNumber2 >= numPages2}
-            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
-          >
-            Next ➡
-          </button>
-        </div>
-      </div>
-
-      {/* 🔷 NEW PDF TITLE */}
-      <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6 text-green-700 text-center mt-10">
-        ग्रामपंचायती विषयी सर्वसाधरण माहिती 
-      </h1>
-
-      {/* 🔷 NEW PDF */}
-      <div className="w-full flex flex-col items-center">
-        <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4">
-          <Document
-            file="/Pdfs/GP mahiti patrak.pdf"
             onLoadSuccess={({ numPages }) => setNumPages3(numPages)}
           >
             <Page pageNumber={pageNumber3} width={pdfWidth} />
@@ -207,6 +175,45 @@ const Information = () => {
           <button
             onClick={goNext3}
             disabled={pageNumber3 >= numPages3}
+            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
+          >
+            Next ➡
+          </button>
+        </div>
+      </div>
+
+      {/* 🔷 PDF 4 TITLE */}
+      <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6 text-green-700 text-center mt-10">
+        ग्रामपंचायती विषयी सर्वसाधरण माहिती
+      </h1>
+
+      {/* 🔷 PDF 4 */}
+      <div className="w-full flex flex-col items-center">
+        <div className="bg-white rounded-xl shadow-2xl p-2 sm:p-4">
+          <Document
+            file="/Pdfs/GP mahiti patrak.pdf"
+            onLoadSuccess={({ numPages }) => setNumPages4(numPages)}
+          >
+            <Page pageNumber={pageNumber4} width={pdfWidth} />
+          </Document>
+        </div>
+
+        <div className="flex items-center justify-center gap-6 mt-4">
+          <button
+            onClick={goPrev4}
+            disabled={pageNumber4 <= 1}
+            className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
+          >
+            ⬅ Prev
+          </button>
+
+          <div className="px-4 py-2 bg-white rounded-lg shadow font-semibold text-sm">
+            Page {pageNumber4} / {numPages4 || "--"}
+          </div>
+
+          <button
+            onClick={goNext4}
+            disabled={pageNumber4 >= numPages4}
             className="px-4 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-40"
           >
             Next ➡
